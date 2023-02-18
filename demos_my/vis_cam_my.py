@@ -39,8 +39,15 @@ METHOD_MAP = {
     'layercam': LayerCAM,
 }
 
+# python vis_cam_my.py 7.jpg ../checkpoints/resnet18_8xb32_in1k_fruit30.py ../checkpoints/resnet18_8xb32_in1k_fruit30_20230215_epoch_100.pth
 
+# python vis_cam_my.py cat-dog.png ../checkpoints/resnet18_8xb32_in1k.py ../checkpoints/resnet18_8xb32_in1k_20210831-fbbb1da6.pth --target-category 238 # --target-category 281
 
+#打印网络参数
+# python vis_cam_my.py cat-dog.png ../checkpoints/resnet18_8xb32_in1k.py ../checkpoints/resnet18_8xb32_in1k_20210831-fbbb1da6.pth --preview-model
+
+#指定观察特定层的注意力
+# python vis_cam_my.py cat-dog.png ../checkpoints/resnet18_8xb32_in1k.py ../checkpoints/resnet18_8xb32_in1k_20210831-fbbb1da6.pth --target-layers backbone.layer4.1.conv2
 def parse_args():
     parser = argparse.ArgumentParser(description='Visualize CAM')
     parser.add_argument('img', help='Image file')
@@ -66,7 +73,7 @@ def parse_args():
         help='Type of method to use, supports '
         f'{", ".join(list(METHOD_MAP.keys()))}.')
     parser.add_argument(
-        '--target-category',
+        '--target-category', #默认用最高类别的注意力
         default=[],
         nargs='+',
         type=int,

@@ -19,9 +19,11 @@ from mmcls.models import build_classifier
 from mmcls.utils import (auto_select_device, collect_env, get_root_logger,
                          setup_multi_processes)
 
-# 配置文件
-# ../configs/resnet/resnet18_8xb32_in1k.py
-# ../configs/resnet/resnet18_8xb32_in1k_fruit30
+# resnet
+# python train_my.py  ../checkpoints/resnet18_8xb32_in1k_fruit30.py
+
+# VIT模型
+# python train_my.py ../checkpoints/vit-base-p16_ft-64xb64_in1k-384_fruit30.py
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a model')
     parser.add_argument('config', help='train config file path')

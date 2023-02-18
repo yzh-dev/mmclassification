@@ -636,6 +636,7 @@ class ResNet(BaseBackbone):
             x = self.conv1(x)
             x = self.norm1(x)
             x = self.relu(x)
+        print("ceshi...........................................")
         x = self.maxpool(x)
         outs = []
         for i, layer_name in enumerate(self.res_layers):

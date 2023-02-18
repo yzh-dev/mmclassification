@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 **/*.pyc
 
+# 忽略数据集
+mmcls/data
+
 # C extensions
 *.so
 

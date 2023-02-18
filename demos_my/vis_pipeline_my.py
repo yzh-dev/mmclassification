@@ -19,7 +19,7 @@ from mmcls.datasets.builder import PIPELINES, build_dataset, build_from_cfg
 from mmcls.models.utils import to_2tuple
 
 # 展示中间结果
-# ../../configs/resnet/resnet18_8xb32_in1k_fruit30 --output-dir ../work_dir/resnet18_8xb32_in1k_fruit30/vis_result/vis_pipeline
+# ../checkpoints/resnet18_8xb32_in1k_fruit30.py --output-dir ../tools/work_dir/resnet18_8xb32_in1k_fruit30/vis_result/vis_pipeline
 # --number 10
 
 # text style

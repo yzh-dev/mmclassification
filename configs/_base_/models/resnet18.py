@@ -10,7 +10,7 @@ model = dict(
         style='pytorch'),       # 主干网络的风格，'pytorch' 意思是步长为2的层为 3x3 卷积， 'caffe' 意思是步长为2的层为 1x1 卷积。
     neck=dict(type='GlobalAveragePooling'),    # 颈网络类型
     head=dict(
-        type='LinearClsHead',     # 线性分类头，
+        type='LinearClsHead',     # 线性分类头，全连接
         num_classes=1000,         # 输出类别数，这与数据集的类别数一致
         in_channels=2048,         # 输入通道数，这与 neck 的输出通道一致
         loss=dict(type='CrossEntropyLoss', loss_weight=1.0), # 损失函数配置信息

@@ -9,6 +9,7 @@ from mmcls.datasets import build_dataset
 from mmcls.models import build_classifier
 
 
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description='MMCls evaluate prediction success/fail')
